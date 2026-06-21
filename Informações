@@ -1,0 +1,230 @@
+using System;
+class Program
+{
+    static void Main(String[] args)
+    {
+        double valor = 0;
+        int opcao = 0;
+
+        int processador = 0;
+        int memoria = 0;
+        int armazenamento = 0;
+        int placa = 0;
+
+        string resposta = "";
+
+        string config = "";
+        int confignum = 0;
+
+        int pagamento = 0;
+        double valor_final = 0;
+
+        do
+        {
+
+            Console.WriteLine("=== Criação de configuração de PC ===");
+            Console.WriteLine("Escolha a opção:");
+            Console.WriteLine("1 - Processador");
+            Console.WriteLine("2 - Memória RAM");
+            Console.WriteLine("3 - Armazenamento");
+            Console.WriteLine("4 - Placa de vídeo");
+            Console.WriteLine("5 - Preço");
+            Console.WriteLine("6 - Finalizar");
+
+            Console.Write("Digite a opção: ");
+            opcao = int.Parse(Console.ReadLine());
+
+            switch (opcao)
+            {
+                case 1:
+                    Console.WriteLine("Escolha um processador");
+                    Console.WriteLine("1 - Intel Core i3");
+                    Console.WriteLine("2 - AMD Ryzen 5 5600GT");
+                    Console.WriteLine("3 - AMD Ryzen 7000X3D");
+
+                    Console.Write("Digite a opção: ");
+                    processador = int.Parse(Console.ReadLine());
+
+                    switch (processador)
+                    {
+                        case 1:
+                            valor += 309.90;
+                            break;
+
+                        case 2:
+                            valor += 1390.98;
+                            break;
+
+                        case 3:
+                            valor += 2801.61;
+                            break;
+                    }
+                    break;
+
+                case 2:
+                    Console.WriteLine("Escolha uma memória RAM");
+                    Console.WriteLine("1 - Memória RAM RAM Kingston KVR, 8GB, DDR3");
+                    Console.WriteLine("2 - Memória RAM Kingston Fury Beast, 16GB, DDR4");
+                    Console.WriteLine("3 - Memória RAM XPG Lancer, 32GB (2x16GB), DDR5");
+
+                    Console.Write("Digite a opção: ");
+                    memoria = int.Parse(Console.ReadLine());
+
+                    switch (memoria)
+                    {
+                        case 1:
+                            valor += 325.90;
+                            break;
+
+                        case 2:
+                            valor += 1176.46;
+                            break;
+
+                        case 3:
+                            valor += 4235.28;
+                            break;
+                    }
+                    break;
+
+                case 3:
+                    Console.WriteLine("Escolha um armazenamento");
+                    Console.WriteLine("1 - SSD 128GB Keepdata");
+                    Console.WriteLine("2 - SSD 512gb 2.5 Sata 3");
+                    Console.WriteLine("3 - HSSD 512gb 2.5 Sata 3");
+
+                    Console.Write("Digite a opção: ");
+                    armazenamento = int.Parse(Console.ReadLine());
+
+                    switch (armazenamento)
+                    {
+                        case 1:
+                            valor += 229.99;
+                            break;
+
+                        case 2:
+                            valor += 884.25;
+                            break;
+
+                        case 3:
+                            valor += 1623.75;
+                            break;
+                    }
+                    break;
+                case 4:
+                    Console.WriteLine("Escolha uma placa de vídeo");
+                    Console.WriteLine("1 - Placa De Vídeo Husky Alpha RX 580, 8GB ");
+                    Console.WriteLine("2 -  Placa de Vídeo GALAX NVIDIA GeForce RTX 5050 1-Click");
+                    Console.WriteLine("3 - processador 3");
+
+                    Console.Write("Digite a opção: ");
+                    placa = int.Parse(Console.ReadLine());
+
+                    switch (placa)
+                    {
+                        case 1:
+                            valor += 899.99;
+                            break;
+
+                        case 2:
+                            valor += 2.199.99;
+
+                            break;
+
+                        case 3:
+                            valor += 1000;
+                            break;
+                    }
+                    break;
+
+                case 5:
+                    Console.WriteLine("O preço atual é de R$ "+ valor); 
+                    break;
+
+                case 6:
+                    int prestigio = processador + memoria + armazenamento + placa;
+
+                    if (prestigio >= 4 & prestigio <= 6)
+                    {
+                        config = "Básica";
+                        confignum = 1;
+                    }
+
+                    else if (prestigio > 6 & prestigio == 7 & prestigio <= 9)
+                    {
+                        config = "Intermediária";
+                        confignum = 2;
+                    }
+                    else if (prestigio > 9)
+                    {
+                        config = "Avançada/Gamer";
+                        confignum = 3;
+                    }
+
+                    switch (confignum)
+                    {
+                        case 1:
+                            Console.WriteLine("Gostaria de incluir o kit de periféricos (s/n)");
+                            Console.WriteLine("... ");
+                            Console.WriteLine("Por R$... ");
+                            resposta = Console.ReadLine();
+                            if (resposta == "s")
+                            {
+                                valor += 1000;
+                            }
+                            break;
+
+                        case 2:
+                            Console.WriteLine("Gostaria de incluir o kit de periféricos");
+                            Console.WriteLine("... ");
+                            Console.WriteLine("Por R$... ");
+                            Console.Write("Digite a resposta (s/n): ");
+                            resposta = Console.ReadLine();
+                            if (resposta == "s")
+                            {
+                                valor += 1000;
+                            }
+                            break;
+
+                        case 3:
+                            Console.WriteLine("Gostaria de incluir o kit de periféricos");
+                            Console.WriteLine("... ");
+                            Console.WriteLine("Por R$... ");
+                            Console.Write("Digite a resposta (s/n): ");
+                            resposta = Console.ReadLine();
+                            if (resposta == "s")
+                            {
+                                valor += 1000;
+                            }
+                            break;
+                    }
+
+                    Console.WriteLine("Escolha a forma de pagamento:");
+                    Console.WriteLine("1 - à vista (10% de desconto)");
+                    Console.WriteLine("2 - 3x sem juros");
+                    Console.Write("Digite sua opção: ");
+                    pagamento = int.Parse(Console.ReadLine());
+
+                    switch (pagamento)
+                    {
+                        case 1:
+                            valor_final = valor - (valor * 0.10);
+                            Console.WriteLine("O seu PC tem uma configuração " + config + " e custa R$ " + valor_final);
+                            break;
+
+                        case 2:
+                            valor_final = valor / 3;
+                            Console.WriteLine("O seu PC tem uma configuração " + config + " e custa R$ " + valor_final);
+                            break;
+                    }
+                    break;
+
+                default:
+                    Console.WriteLine("Opção inválida");
+                    break;
+            }
+        } while (opcao !=  6);
+
+        Console.WriteLine("Pressione qualquer tecla para sair..." + valor );
+        Console.ReadKey();
+    }
+}
