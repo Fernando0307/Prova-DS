@@ -228,3 +228,11 @@ class Program
         Console.ReadKey();
     }
 }
+
+Placas Mães - nomes, preços e detalhes
+iniciante - Placa Mae Alphard H610M-T DDR4 - R$499.99
+intermediário - Placa Mae MSI PRO B760M-P DDR5 - R$ 1.364.69
+Profissional - Placa-Mãe Gigabyte Z890 Intel AORUS MASTER DDR5 - R$5.847.77
+
+Processador - nome, preços e detalhes
+Profissional - Processador Intel Core i9-14900 - R$3.299.99
